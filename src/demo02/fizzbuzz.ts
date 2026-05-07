@@ -1,4 +1,4 @@
-// Ejercicio FizzBuzz -> Imprime los números del 1 al 100, pero para múltiplos de 3 imprime "Fizz", para múltiplos de 5 imprime "Buzz" y para múltiplos de ambos imprime "FizzBuzz". Si no son múltiplos de 3 ni de 5 debe devolver el número introducido en string
+// Ejercicio FizzBuzz -> Imprime los números del 1 al 100, pero para múltiplos de 3 imprime "Fizz", para múltiplos de 5 imprime "Buzz" y para múltiplos de ambos imprime "FizzBuzz".
 
 export const fizzBuzz = (n: number): string => {
     const responses: [string, string, string] = ['Fizz', 'Buzz', 'FizzBuzz'];
@@ -11,5 +11,11 @@ export const fizzBuzz = (n: number): string => {
         return responses[1];
     } else {
         return n.toString();
+    }
+};
+
+export const fizzBuzzSerie = (limit = 100): void => {
+    for (let i = 1; i <= limit; i++) {
+        console.log(fizzBuzz(i));
     }
 };

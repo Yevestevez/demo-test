@@ -1,6 +1,6 @@
-import { fizzBuzz } from './fizzbuzz.ts';
+import { fizzBuzz, fizzBuzzSerie } from './fizzbuzz.ts';
 
-describe('Given FizzBuzz function', () => {
+describe('Given fizzBuzz function', () => {
     describe('When it receives 1', () => {
         test('Then it should return 1', () => {
             // Arrange
@@ -94,6 +94,22 @@ describe('Given FizzBuzz function', () => {
             const result = fizzBuzz(input);
             // Assert
             expect(result).toBe(expectedOutput);
+        });
+    });
+});
+
+describe('Given fizzBuzzSerie function', () => {
+    describe('When it calls with 10', () => {
+        test('Then console.log will be call 100 times', () => {
+            // Arrange
+            const limit = 100;
+            vitest.spyOn(console, 'log').mockImplementation(() => {
+                //
+            });
+            // Act
+            fizzBuzzSerie(limit);
+            // Assert
+            expect(console.log).toHaveBeenCalledTimes(limit);
         });
     });
 });
